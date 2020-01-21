@@ -1,0 +1,20 @@
+name: 'Mutating tictactoe'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-pitest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Maven
+        uses: xlui/action-maven-cli@v1.0
+
+      - name: Install Dependencies
+        run: mvn clean install
+
+      - name: Run Pitest
+        run: mvn org.pitest:pitest-maven:mutationCoverage
