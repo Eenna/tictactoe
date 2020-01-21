@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #use master branch
-      uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
       # install maven and open jdk 8
       - name: Install Maven
